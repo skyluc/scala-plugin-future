@@ -35,5 +35,12 @@
             id="com.typesafe.luc.plugin.future.ThreeQueriesJavaFutureView"
             name="Three Queries Java Future view">
       </view>
+      <view
+            category="com.typesafe.luc.plugin.future"
+            class="com.typesafe.luc.plugin.future.ThreeQueriesFuturesFutureView"
+            icon="icons/sample.gif"
+            id="com.typesafe.luc.plugin.future.ThreeQueriesFuturesFutureView"
+            name="Three Queries Futures Future view">
+      </view>
    </extension>
 </plugin>
