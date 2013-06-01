@@ -35,6 +35,10 @@ class ThreeQueriesModel extends Model {
     rootsCache
   }
 
+  private def refresh = {
+    refreshList foreach { r => r() }
+  }
+
   class FetchJob1 extends Job("ThreeQueries 1 job") {
 
     def run(monitor: IProgressMonitor): IStatus = {
@@ -42,10 +46,10 @@ class ThreeQueriesModel extends Model {
       val roots = Client.getRoots.map(Root(_)(FetchingSubs))
 
       new FetchJob2(roots).schedule
-      
+
       rootsCache = roots
 
-      refreshList.foreach { r => r() }
+      refresh
 
       Status.OK_STATUS
     }
@@ -63,7 +67,7 @@ class ThreeQueriesModel extends Model {
 
       new FetchJob3(allSubs).schedule
 
-      refreshList.foreach { r => r() }
+      refresh
 
       Status.OK_STATUS
     }
@@ -83,7 +87,7 @@ class ThreeQueriesModel extends Model {
         fetched = true
       }
 
-      refreshList.foreach { r => r() }
+      refresh
 
       Status.OK_STATUS
     }

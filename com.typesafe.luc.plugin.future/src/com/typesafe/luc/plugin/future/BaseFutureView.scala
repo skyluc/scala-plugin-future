@@ -13,11 +13,11 @@ import com.typesafe.luc.plugin.future.model.Leaf
 import com.typesafe.luc.plugin.future.model.Root
 import com.typesafe.luc.plugin.future.model.Sub
 import com.typesafe.luc.plugin.future.model.Element
-import com.typesafe.luc.plugin.future.model.Model
+import com.typesafe.luc.plugin.future.model.ModelJava
 
 abstract class BaseFutureView extends ViewPart {
 
-  protected[future] val model: Model
+  protected[future] val model: ModelJava
 
   private var viewer: TreeViewer = _
 
@@ -60,14 +60,18 @@ abstract class BaseFutureView extends ViewPart {
       }
 
     def getElements(inputElement: Any): Array[Object] = {
-      model.roots { () =>
-        viewer.getControl().getDisplay().asyncExec(new Runnable {
+      model.rootsArray {
+        new Runnable {
           def run() {
-            viewer.refresh()
-            viewer.expandAll()
+            viewer.getControl().getDisplay().asyncExec(new Runnable {
+              def run() {
+                viewer.refresh()
+                viewer.expandAll()
+              }
+            })
           }
-        })
-      }.toArray
+        }
+      }.asInstanceOf[Array[Object]]
     }
 
     def getParent(element: Any): Object = null

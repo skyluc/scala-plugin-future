@@ -22,18 +22,24 @@ object Client {
         roots
     }
   
+  def getRootsArray() = getRoots().toArray
+
   def getSubs(root: String): List[String] =
     performRequest(SubsRequest(root)) match {
       case SubsResponse(subs) =>
         subs
     }
   
+  def getSubsArray(root: String) = getSubs(root).toArray
+
   def getLeaves(sub: String): List[String] =
     performRequest(LeavesRequest(sub)) match {
       case LeavesResponse(leaves) =>
         leaves
     }
   
+  def getLeavesArray(sub: String) = getLeaves(sub).toArray
+
   private def performRequest(request: Request): Response = {
     val socket = new Socket("localhost", Configuration.Port)
     try {
