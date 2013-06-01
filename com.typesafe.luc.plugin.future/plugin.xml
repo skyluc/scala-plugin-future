@@ -42,5 +42,12 @@
             id="com.typesafe.luc.plugin.future.ThreeQueriesFuturesFutureView"
             name="Three Queries Futures Future view">
       </view>
+      <view
+            category="com.typesafe.luc.plugin.future"
+            class="com.typesafe.luc.plugin.future.FullParallelFutureView"
+            icon="icons/sample.gif"
+            id="com.typesafe.luc.plugin.future.FullParallelFutureView"
+            name="Full Parallel Future view">
+      </view>
    </extension>
 </plugin>
