@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.typesafe.luc.plugin.future.feature_0.0.0.jar" id="com.typesafe.luc.plugin.future.feature" version="0.0.0">
+      <category name="com.typesafe.luc.plugin.future"/>
+   </feature>
+   <feature url="features/com.typesafe.luc.plugin.future.source.feature_0.0.0.jar" id="com.typesafe.luc.plugin.future.source.feature" version="0.0.0">
+      <category name="com.typesafe.luc.plugin.future-source"/>
+   </feature>
+   <category-def name="com.typesafe.luc.plugin.future" label="Scala plugin Future"/>
+   <category-def name="com.typesafe.luc.plugin.future-source" label="Scala plugin Future Source"/> -->
+</site>

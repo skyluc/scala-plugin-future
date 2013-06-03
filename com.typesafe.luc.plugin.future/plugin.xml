@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.typesafe.luc.plugin.future"
+            name="Scala Future">
+      </category>
+      <view
+            category="com.typesafe.luc.plugin.future"
+            class="com.typesafe.luc.plugin.future.StaticFutureView"
+            icon="icons/sample.gif"
+            id="com.typesafe.luc.plugin.future.StaticFutureView"
+            name="Static Future view">
+      </view>
+      <view
+            category="com.typesafe.luc.plugin.future"
+            class="com.typesafe.luc.plugin.future.OneQueryFutureView"
+            icon="icons/sample.gif"
+            id="com.typesafe.luc.plugin.future.OneQueryFutureView"
+            name="One Query Future view">
+      </view>
+      <view
+            category="com.typesafe.luc.plugin.future"
+            class="com.typesafe.luc.plugin.future.ThreeQueriesFutureView"
+            icon="icons/sample.gif"
+            id="com.typesafe.luc.plugin.future.ThreeQueriesFutureView"
+            name="Three Queries Future view">
+      </view>
+   </extension>
+</plugin>
